@@ -1,4 +1,11 @@
-all:
-	gcc -std=c99 -pedantic -Wall -Wextra main.c -o ./iterations
+CC=gcc
+CFLAGS=-std=c99 -Wall -Wextra -Werror -pedantic
+
+all: iterations
+
+
+iterations: main.c
+	$(CC) $(CFLAGS) main.c -o iterations
+
 clean:
-	rm -f ./iterations
+	rm -f *.o iterations
