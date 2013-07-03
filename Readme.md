@@ -8,8 +8,8 @@ Counting series functions is intersting problem for IT. Common problem for this 
 
 ### Problem analysis
 
-Task: counting infinity series with fixed approximation.
-All functions must work with rational numbers.
+Task: counting infinity series with fixed approximation. 
+All functions must work with rational numbers. Written in c std99. Program not using math.h library.
 
 ### Solution draft
 
@@ -113,6 +113,9 @@ program will count exponential function x^2.45 with 7 digits of approximation
 
 **Input is stdin line.**
 		
+---
+
+**Note: Program using 20 digit constant for e and pi. Currently 20 digits is maximum, but add this contants series counting is to-do.**
 
 ---
 

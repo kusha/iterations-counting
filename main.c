@@ -11,13 +11,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
 
-const double IZP_E = 2.7182818284590452354;        // e becuase of this constant max input data 20 numbers
-const double IZP_PI = 3.14159265358979323846;      // pi
-const double IZP_2PI = 6.28318530717958647692;     // 2*pi
-const double IZP_PI_2 = 1.57079632679489661923;    // pi/2
-const double IZP_PI_4 = 0.78539816339744830962;    // pi/4
+const double CONST_E = 2.7182818284590452354;        // e becuase of this constant max input data 20 numbers
+const double CONST_PI = 3.14159265358979323846;      // pi
+const double CONST_2PI = 6.28318530717958647692;     // 2*pi
+const double CONST_PI_2 = 1.57079632679489661923;    // pi/2
+const double CONST_PI_4 = 0.78539816339744830962;    // pi/4
 
 //DEFINE CONSTANTS
 //const with help infromation 
@@ -56,6 +55,16 @@ int print_help() {
 	return 1;
 }
 
+//ABS FUNCTION
+double f_abs (double x) {
+	
+	if (x<0) {
+		return -x;
+	} else {
+		return x;
+	}
+}
+
 //SQRT  FUNCTION via NEWTON'S METHOD
 double sqr (double x, double eps) {
 
@@ -83,7 +92,7 @@ double sqr (double x, double eps) {
 		previous = aprx;
 		aprx=(q+aprx)/2;
 		//printf("%.30f : %.30f\n", previous, aprx);
-	} while (fabs(previous-aprx)>eps);
+	} while (f_abs(previous-aprx)>eps);
 	return c*aprx;
 }
 
@@ -107,13 +116,13 @@ double ln (double x, double eps) {
 	if (x>=1) {
 		// OPTIMIZATION via DIVIDE
 		while (x>=1) {
-			x = x / IZP_E;
+			x = x / CONST_E;
 			++div_c;
 		} 
 	} else {
 		//// OPTIMIZATION via MULTIPLY
-		while ((x * IZP_E)<1) {
-			x = x * IZP_E;
+		while ((x * CONST_E)<1) {
+			x = x * CONST_E;
 			++mul_c;
 		} 
 	}
@@ -131,7 +140,7 @@ double ln (double x, double eps) {
 		xpow = xpow * x * -1; // minus and power will count together
 		next = xpow/i;
 		++i;
-	} while (fabs(previous-next)>eps);
+	} while (f_abs(previous-next)>eps);
 
 	// ACCEPT OPTIMIZATION
 	if (div_c) {sum += div_c;} //by divide
@@ -177,7 +186,7 @@ double pwr (double x, double a, double eps) {
 		next = previous * logarithm * a / i;
 		//printf("%d : %.25f : %.25f : %.25f\n", i, sum ,previous, next);
 		++i;
-	} while (fabs(next-previous)>eps);
+	} while (f_abs(next-previous)>eps);
 
 	if (xo_power) {
 		sum = 1/sum;
@@ -201,7 +210,7 @@ double arctg (double x, double eps) {
 
 	// ARGUMENT X OPTIMIZATION
 
-	if (x==1) {return IZP_PI_4;}
+	if (x==1) {return CONST_PI_4;}
 
 	_Bool Pi_flag = 0; 
 	if (x>1) {x = 1/x; Pi_flag =1;}
@@ -221,10 +230,10 @@ double arctg (double x, double eps) {
 		next = xpow/i;
 		//printf("%2d : %.20f : %.20f : %.20f : %.20f\n", i, sum, previous, next, (previous-next));
 		i += 2;
-	} while (fabs(next-previous)>=eps);
+	} while (f_abs(next-previous)>=eps);
 
 	if (Pi_flag) {
-		sum = (IZP_PI_2 - sum);
+		sum = (CONST_PI_2 - sum);
 	} 
 
 	return c*sum;
