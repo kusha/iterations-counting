@@ -22,21 +22,22 @@ const double IZP_PI_4 = 0.78539816339744830962;    // pi/4
 //DEFINE CONSTANTS
 //const with help infromation 
 const char *HELPMSG =  
-"Program: \"Iteracni vypocty\".\n"
+"Program: \"Iteration counting\".\n"
 "Author: Mark Birger.\n"
-"Counting some functions.\n"
-"Usage:   ./proj2 --help\n"
-"         print all parameters\n"
+"Counting some functions series.\n"
+"Usage:	./iterations --help\n"
+"		print all parameters\n"
 "Use this parameters:\n"
-"         -h            print help\n"
-"         --help\n"
-"         --powxa       count exponntial function\n"
-"         --arctg       count arctangens function\n"
-"         --argsinh     count argument of sinus hyperbolic function\n"
-"         [0...]          signification digits\n"
-"         [real number]   exponetial function parameter\n"
-"Example: ./proj2 --powxa 7 2.45\n"
-"         program will count exponential function x^2.45\n";
+"		-h				print help\n"
+"		--help\n"
+"		--powxa			count exponntial function\n"
+"		--arctg			count arctangens function\n"
+"		--argsinh		count argument of sinus hyperbolic function\n"
+"		[0...]			signification digits\n"
+"		real number]	exponetial function parameter\n"
+"Example: ./iterations --powxa 7 2.45\n"
+"		program will count exponential function x^2.45\n"
+"		with 7 digits of approximation\n";
 
 char *HELP0="-h";
 char *HELP1="--help";
