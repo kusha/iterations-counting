@@ -18,7 +18,7 @@ All functions must work with rational numbers.
 ##### Square root
 ![equation](http://latex.codecogs.com/gif.latex?y%3D%5Csqrt%7Bx%7D)
 
-Using Newtone's method.
+Using [Newtone's method](https://en.wikipedia.org/wiki/Newton's_method).
 
 ##### Natural logarithm
 ![equation](http://latex.codecogs.com/gif.latex?y%3Dlog%28x%29)
@@ -36,6 +36,8 @@ Using Newtone's method.
 ![equation](http://latex.codecogs.com/gif.latex?log%28x%29%3D%28x-1%29-%5Cfrac%7B%28x-1%29%5E2%7D%7B2%7D%2B%5Cfrac%7B%28x-1%29%5E3%7D%7B3%7D-%5Cfrac%7B%28x-1%29%5E4%7D%7B4%7D...)
 
 #### Signification digit
+
+Used to get fixed approximation:
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cepsilon%3D10%5E%7B-%28sigdig%2B1%29%7D)
 
